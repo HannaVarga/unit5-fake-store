@@ -1,13 +1,17 @@
 import { useState } from 'react'
 
 import './App.css'
+import Header from './components/Header'
+import Hompage from './pages/Hompage'
 
 function App() {
 
   return (
     <div>
       
-      <h1>Vite + React</h1>
+      <Header />
+      <Hompage />
+      <Footer />
      
       
     </div>
