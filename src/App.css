@@ -1,19 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:wght@100;400&family=Nunito+Sans:wght@300&family=Sen&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-style: 'Inter', sans-serif;
 }
 
 .header-container {
     height: 50px;
     color: #3A4895;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 .homepage-container {
-    color: #5264C3;
+    color: #3A4895;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .footer-container {
     height: 50px;
     background-color: #3A4895;
+    color: #FCFCFC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
 }

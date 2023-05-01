@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import Header from './components/Header'
-import Hompage from './pages/Hompage'
+import Homepage from './pages/Homepage'
 import Footer from './components/Footer'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className='App'>
 
       <Header />
-      <Hompage />
+      <Homepage />
       <Footer />
      
       
