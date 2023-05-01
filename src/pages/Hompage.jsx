@@ -2,7 +2,7 @@ import React from 'react'
 
 function Hompage() {
   return (
-    <div>
+    <div className='hompage-container'>
       
     </div>
   )
