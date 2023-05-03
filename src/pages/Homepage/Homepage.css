@@ -1,0 +1,10 @@
+.button-container {
+    color: #5264C3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}

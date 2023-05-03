@@ -1,0 +1,7 @@
+.header-container {
+    height: 50px;
+    color: #3A4895;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
