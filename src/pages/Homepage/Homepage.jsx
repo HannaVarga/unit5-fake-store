@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react'
 import './Homepage.css'
 import axios from 'axios'
+import ProductCard from '../../components/ProductCard/ProductCard'
 
 function Homepage() {
  const [categories,setCategories]= React.useState([])
@@ -45,6 +46,11 @@ function Homepage() {
    {
     categories.map(category => <button>{category}</button>)
     }
+    <div className='product-cards'>
+      {
+    products.map(item => <ProductCard product={item}/>)
+    }
+    </div>
     </div>
   )
 }

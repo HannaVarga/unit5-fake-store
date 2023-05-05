@@ -1,11 +1,21 @@
 import React from 'react'
 import './ProductCard.css'
-function ProductCard() {
+
+import { IoHeartCircle } from "react-icons/io5";
+import { IoHeartCircleSharp } from "react-icons/io5";
+
+
+function ProductCard({product}) {
   return (
-    <div>
-      
+    <div className="product-card">
+      <IoHeartCircle className="heart-icon" />
+      <IoHeartCircleSharp className="heart-icon" />
+      <img src={product.image} />
+      <p>{product.title}</p>
+      {/* <a href={`/details/${product.id}`}>See Details</a> */} 
     </div>
   )
 }
 
 export default ProductCard
+// the a tag should be a link to url etc.
