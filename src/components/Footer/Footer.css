@@ -7,3 +7,10 @@
     align-items: center;
     padding: 15px;
 }
+
+.footer-container button {
+    color: #FCFCFC;
+    border: none;
+    background-color: #3A4895;
+    ;
+}
