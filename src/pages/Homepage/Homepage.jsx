@@ -2,8 +2,13 @@ import React, { useEffect} from 'react'
 import './Homepage.css'
 import axios from 'axios'
 import ProductCard from '../../components/ProductCard/ProductCard'
+import { ThemeContext } from '../../context/Themecontext'
 
 function Homepage() {
+   // Global state
+   const {darkMode, setDarkMode} = useContext(ThemeContext)
+
+
  const [categories,setCategories]= React.useState([])
  const [products, setProducts]= React.useState([])
   useEffect(
@@ -27,7 +32,9 @@ function Homepage() {
             setProducts(res.data)
           })
           .catch(err => console.log(err))
+          
     }, []
+    
   )
 
 
