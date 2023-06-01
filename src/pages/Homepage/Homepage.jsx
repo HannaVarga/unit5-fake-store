@@ -2,10 +2,10 @@ import React, { useEffect} from 'react'
 import './Homepage.css'
 import axios from 'axios'
 import ProductCard from '../../components/ProductCard/ProductCard'
-import { ThemeContext } from '../../context/Themecontext'
+import { ThemeContext } from '../../context/ThemeContext'
 
 function Homepage() {
-   // Global state
+  //  Global state
    const {darkMode, setDarkMode} = useContext(ThemeContext)
 
 
@@ -13,7 +13,7 @@ function Homepage() {
  const [products, setProducts]= React.useState([])
   useEffect(
     ()=>{
-      // console.log('loaded')
+      console.log('loaded')
       // Call API to get categories 
       axios.get(`https://fakestoreapi.com/products/categories`)
       .then(res =>{
@@ -48,15 +48,20 @@ function Homepage() {
 
 
   return (
+    <div className={darkMode?"home-container home-dark" : home-container}>
     <div className='button-container'>
+      
+
      <button>All</button>
    {
     categories.map(category => <button>{category}</button>)
     }
+  
     <div className='product-cards'>
       {
     products.map(item => <ProductCard product={item}/>)
     }
+    </div>
     </div>
     </div>
   )

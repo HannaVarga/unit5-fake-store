@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer'
 import ContactUs from './pages/ContactUs/ContactUs';
 import ProductCard from './components/ProductCard/ProductCard'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
-import ThemeContextProvider from './context/Themecontext'
+import ThemeContextProvider from './context/ThemeContext'
 import CartContextProvider from './context/Cartcontext'
 
 

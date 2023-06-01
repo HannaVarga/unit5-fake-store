@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Checkout.css'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../contexts/CartContext'
-import { ThemeContext } from '../../contexts/ThemeContext'
+// import { ThemeContext } from '../../contexts/ThemeContext'
 
 import Modal from 'react-modal'
 import { IoTrashOutline } from "react-icons/io5"
@@ -10,7 +10,7 @@ import { IoTrashOutline } from "react-icons/io5"
 function Checkout(product) {
 
   // Global states
-  const {darkMode, setDarkMode} = useContext(ThemeContext)
+  // const {darkMode, setDarkMode} = useContext(ThemeContext)
   const {cart, removeProduct} = useContext(CartContext)
 
   const totalPrice = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);

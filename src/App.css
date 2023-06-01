@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat:wght@100;400&family=Nunito+Sans:wght@300&family=Sen&display=swap');
+:root {
+    --blue: #3A4895;
+    --yellow: #FFD814;
+    --red: #E25822;
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey: #CBD3D8;
+    --dark-grey: #444444;
+}
+
 * {
     margin: 0;
     padding: 0;

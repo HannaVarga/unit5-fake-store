@@ -1,6 +1,8 @@
 import React from 'react'
 import './ContactUs.css'
+// import { Themecontext } from '../../context/Themecontext'
 function ContactUs() {
+  // const {darkMode} = useContext(Themecontext)
   return (
     <div>
    <h1>Contact Us</h1>

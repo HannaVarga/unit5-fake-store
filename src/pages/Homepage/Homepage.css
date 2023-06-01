@@ -11,3 +11,33 @@
     background-color: white;
     color: #5264C3;
 }
+
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-cards cards {
+    width: 183px;
+    height: 248px;
+    border-radius: 8px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .filter-contaiHomePagener {
+        justify-content: center;
+    }
+}
+
+
+/* PHONE */
+
+@media (max-width: 480px) {
+    .filter-container {
+        flex-wrap: wrap;
+    }
+}

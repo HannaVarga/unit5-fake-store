@@ -10,3 +10,19 @@
     text-decoration: none;
     color: #3A4895;
 }
+
+.shopping-cart {
+    position: relative;
+    font-size: 2em;
+}
+
+.cart-count {
+    background-color: var(--red);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 5px;
+    margin-bottom: 18px;
+    z-index: 1;
+}
