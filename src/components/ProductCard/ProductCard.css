@@ -1,34 +1,85 @@
-.product-card {
-    margin: 10px;
-    padding: 10px;
-    width: 195px;
-    height: 290px;
+.card {
+    background-color: #fff;
+    width: 255px;
+    height: 340px;
+    padding-left: 40px;
+    padding-top: 20px;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 7px 8px 13px -4px rgba(0, 0, 0, 0.47);
-    -webkit-box-shadow: 7px 8px 13px -4px rgba(0, 0, 0, 0.47);
-    -moz-box-shadow: 7px 8px 13px -4px rgba(0, 0, 0, 0.47);
-    background-color: white;
+    text-decoration: none;
+    box-shadow: -10px 17px 17px rgba(10, 10, 10, 0.2);
 }
 
-.product-card img {
-    width: 65%;
-    margin-bottom: 10px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+.card a {
+    font-size: 13px;
+    color: var(--text-darkColor);
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: 600;
+    overflow: hidden;
 }
 
-.product-card a {
+.card p {
+    font-size: 11px;
+    color: #949494;
+}
+
+.card .price {
+    color: var(--text-darkColor);
+    font-weight: 600;
     margin-top: 10px;
-    border: none;
-    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.card-img {
+    border: 1px solid #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 173px;
+    height: 165px;
     border-radius: 8px;
-    background-color: var(--white);
-    color: var(--grey);
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.card-img img {
+    width: 83px;
+    height: 117px;
+}
+
+.card-img span {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #e7e7e7;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        background-color: #fff;
+        width: 183px;
+        height: 319px;
+        padding-left: 15px;
+    }
+    .card-img {
+        width: 153px;
+        height: 145px;
+    }
+    .card a {
+        font-size: 12px;
+    }
+    .card p {
+        font-size: 11px;
+        color: #949494;
+    }
+    .card .price {
+        font-size: 12px;
+    }
 }

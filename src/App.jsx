@@ -1,42 +1,31 @@
-import { useState } from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import './App.css'
-import HomePage from './pages/Homepage/Homepage'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import ContactUs from './pages/ContactUs/ContactUs';
-import ProductCard from './components/ProductCard/ProductCard'
-import ProductDetails from './pages/ProductDetails/ProductDetails'
-import ThemeContextProvider from './context/ThemeContext'
-import CartContextProvider from './context/Cartcontext'
-
-
-
-
-
+import "./App.css";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Footer from "./components/Footer/Footer";
+import Contact from "./pages/Contact/Contact";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
-const storeName = "Fake Store"
+
+
   return (
-    <div className='App'>
-<BrowserRouter>
-<ThemeContextProvider>
- <CartContextProvider>
-   <Header username={storeName} />
+    <div className="App">
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/details/:productId" element={<ProductDetails />} />
 
-  <Routes>
-   <Route path='/' element={<HomePage />}/>
-    <Route path='/contactus' element={<ContactUs />}/>
-    <Route path='/productdetails/:id' element={<ProductDetails />}/>
-    <Route path='/productcard/:id' element={<ProductCard />} />
-   </Routes>
-
-   <Footer />
-   </CartContextProvider>
-    </ThemeContextProvider>
-    </BrowserRouter>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+ 

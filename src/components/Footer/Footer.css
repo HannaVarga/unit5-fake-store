@@ -1,16 +1,21 @@
-.footer-container {
-    height: 50px;
-    background-color: #3A4895;
-    color: #FCFCFC;
+.footer {
+    height: 66px;
+    background-color: var(--primary-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
 }
 
-.footer-container button {
-    color: #FCFCFC;
-    border: none;
-    background-color: #3A4895;
-    ;
+.footer p {
+    color: #fcfcfc;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.footer a {
+    color: #fcfcfc;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
 }

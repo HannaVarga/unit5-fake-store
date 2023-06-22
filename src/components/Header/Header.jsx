@@ -1,33 +1,24 @@
-import React from 'react'
-import {AiOutlineShoppingCart} from "react-icons/ai";
-import './Header.css'
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../context/ThemeContext';
 
+import './Header.css';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ShopContext } from "../../Context/ShopContext";
 
 function Header() {
-  const {darkMode, setDarkMode} = useContext(ThemeContext)
-  return (
-    <div className={darkMode?"home-container home-dark" : home-container}>
-    <div className='header-container'>
-     <Link to="/" className="home-btn"> <h2>Fake Store</h2></Link>
-     <div className="shopping-cart">
-     {/* {count > 0 && <p className="shopping-cart-counter">{count}</p>} */}
+  const { cart } = useContext(ShopContext);
 
-      <AiOutlineShoppingCart className="shopping-cart-icon"  />
-<p className='cart-count'>1</p>
+  return (
+    <div className="header-container">
+      <Link to="/">
+        <h2>Fake Store</h2>
+      </Link>
+      <Link to="/cart">
+        <AiOutlineShoppingCart className="cart-item" />
+        <span>{cart.length}</span>
+      </Link>
     </div>
-    <button onClick={() => setDarkMode(!darkMode)}
-    className={darkMode ? "theme-button-dark" : "theme-button"}>
-      {
-        darkMode ? "Light Mode" : "Dark Mode"
-      }
-    </button>
-    </div>
-    </div>
-  )
+  );
 }
 
-export default Header
-
-// comment out the anywhere else where it has a function the dark  mode  and see if the toggle button works in the header and then work on the functionality :)
+export default Header;

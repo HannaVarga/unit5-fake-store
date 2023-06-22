@@ -1,21 +1,41 @@
-import React from 'react'
-import './ProductCard.css'
+import React, { useState, useEffect, useContext } from "react";
+import "./ProductCard.css";
+import { AiFillHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { ShopContext } from "../../Context/ShopContext";
 
-import { IoHeartCircle } from "react-icons/io5";
-import { IoHeartCircleSharp } from "react-icons/io5";
+function ProductCard({ product }) {
+  const { cart, addToCart, handleRemove } = useContext(ShopContext);
+  const { id, title, category, price, image } = product;
 
+  const [isFavorite, setIsFavorite] = useState(false);
 
-function ProductCard({product}) {
+  useEffect(() => {
+    setIsFavorite(cart.find((item)=> item.id === product.id));
+  }, [cart]);
+
   return (
-    <div className="product-card">
-      <IoHeartCircle className="heart-icon" />
-      <IoHeartCircleSharp className="heart-icon" />
-      <img src={product.image} />
-      <p>{product.title}</p>
-      {/* <a href={`/details/${product.id}`}>See Details</a> */} 
-    </div>
-  )
+    <>
+      <div className="card">
+        <div className="card-img">
+          <img src={image} alt="" />
+          <span>
+            {isFavorite ? (
+              <AiFillHeart style={{ color: "red" }} onClick={()=>handleRemove(product.id)} />
+            ) : (
+              <AiFillHeart style={{ color: "#fff" }} onClick={()=>addToCart(product)}/>
+            )}
+          </span>
+        </div>
+        <Link to={`/details/${id}`}>{title}</Link>
+        <p>{category}</p>
+        <p className="price">
+          $ {price}
+         
+        </p>
+      </div>
+    </>
+  );
 }
 
-export default ProductCard
-// the a tag should be a link to url etc.
+export default ProductCard;

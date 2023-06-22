@@ -1,48 +1,51 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import './ProductDetails.css'
-import axios from 'axios'
+import React from "react";
+import "./ProductDetails.css";
+import { CgEuro } from "react-icons/cg";
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext";
 
 function ProductDetails() {
-  // Gets the ID of the product from the URL
-  const {productId} = useParams()
+  const [product, setProduct] = useState("");
+  const [added, setAdded] = useState(false);
+  const { id, title, description, price, image } = product;
 
-  // Uses state to hold API data
-  const [product, setProduct] = React.useState('')
+  const { addToCart, handleRemove, cart } = useContext(ShopContext);
 
-  // Example: https://fakestoreapi.com/products/3
+  const { productId } = useParams();
 
-  // Retrieves API data when the page loads
-  React.useEffect(
-    ()=>{
-      // Uses axios to make API call
-      axios.get(`https://fakestoreapi.com/products/${productId}`)
-      .then(res=>{
-        console.log(res.data)
-        // Stores data in state
-        setProduct(res.data)
+  useEffect(() => {
+    axios
+      .get(`https://fakestoreapi.com/products/${productId}`)
+      .then((res) => {
+        setProduct(res.data);
       })
-      .catch(err => console.log(err))
-
-    }, [] // Runs only once when page loads
-  )
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
-    <div className="details-container">
-      <img src={product?.image} />
-      <div className="container-info">
-        <p>Name: {product?.title}</p>
-        <p>Price: {product?.price}</p>
-        <p>Description</p>
-        <p>{product?.description}</p>
-        <button>Add to Cart</button>
-
-        {/* <p>Gender: {product?.gender}</p>
-        <p>Location: {character?.location?.name}</p>
-        <p>Species: {character?.species}</p> */}
+    <div className="product-container">
+      <div className="product-box">
+        <img src={image} alt="" />
+        <div className="product-details">
+          <h3>{title}</h3>
+          <h3>
+            {price}
+            <CgEuro />
+          </h3>
+          <span>Description</span>
+          <p>{description}</p>
+          {cart.find((item) => item.id === product.id) ? (
+            <button onClick={() => handleRemove(id)}>Remove from Cart</button>
+          ) : (
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
+          )}
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProductDetails
+export default ProductDetails;

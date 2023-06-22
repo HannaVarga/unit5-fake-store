@@ -1,13 +1,14 @@
 import React from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 function Footer() {
   return (
-    <div className='footer-container'>
-      <h4>Made with ❤️ by mimo </h4>
-      <Link  to="/contactus" className="contact-btn"><button>Contact us</button></Link>
-    </div>
+    <footer className='footer'>
+      <p>Made with  ♡ by  Varga Hanna</p>
+      <Link to='/contact'>Contact us</Link>
+    </footer>
   )
 }
 
