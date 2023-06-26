@@ -4,7 +4,7 @@ import axios from "axios";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Category from "../../components/Category/Category";
 import { useContext } from "react";
-import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../../context/ShopContext";
 
 function Home() {
   const { products, setProducts } = useContext(ShopContext);
