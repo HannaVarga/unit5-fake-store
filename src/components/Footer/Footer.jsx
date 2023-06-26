@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <footer className='footer'>
-      <p>Made with  ♡ by  Varga Hanna</p>
+      <p>Made with  ❤️ by  Varga Hanna</p>
       <Link to='/contact'>Contact us</Link>
     </footer>
   )

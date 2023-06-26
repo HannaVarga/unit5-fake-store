@@ -3,10 +3,11 @@ import './Header.css';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../../context/ShopContext";
+
 
 function Header() {
-  const { cart } = useContext(ShopContext);
+  const { cart } = useContext(ShopContext); 
 
   return (
     <div className="header-container">
