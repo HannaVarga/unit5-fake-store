@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
-import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../../context/ShopContext";
 
 function ProductDetails() {
   const [product, setProduct] = useState("");

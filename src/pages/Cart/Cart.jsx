@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsTrash } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../../context/ShopContext";
 import Modal from "react-modal";
 
 function Cart() {

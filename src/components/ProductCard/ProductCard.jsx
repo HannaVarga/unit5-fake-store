@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./ProductCard.css";
 import { AiFillHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { ShopContext } from "../../Context/ShopContext";
+import { ShopContext } from "../../context/ShopContext";
 
 function ProductCard({ product }) {
   const { cart, addToCart, handleRemove } = useContext(ShopContext);
